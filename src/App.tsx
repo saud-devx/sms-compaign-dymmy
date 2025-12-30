@@ -114,7 +114,7 @@ const App = () => (
             <Route path="/conditions-d-utilisation" element={<Layout><ConditionsUtilisation /></Layout>} />
             <Route path="/politique-de-confidentialite" element={<Layout><PolitiqueConfidentialite /></Layout>} />
             <Route path="/avantages" element={<Layout><Avantages /></Layout>} />
-            
+          
             {/* 404 route - catch all non-matching routes */}
             <Route path="*" element={<NotFound />} />
           </Routes>
