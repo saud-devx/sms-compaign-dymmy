@@ -1,0 +1,268 @@
+
+@layer components {
+  /* Pill button styles */
+  .pill-button {
+    @apply px-6 py-2 rounded-full text-sm font-medium transition-all duration-300
+           bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700
+           text-gray-800 dark:text-gray-200 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .pill-button.active {
+    @apply bg-primary/10 dark:bg-primary/20 text-primary;
+  }
+  
+  /* Floating card with gradient effect */
+  .floating-card {
+    @apply card relative z-10 overflow-hidden before:absolute before:-z-10 before:inset-0 
+           before:translate-y-[60%] before:blur-3xl before:bg-gradient-to-t 
+           before:from-primary/20 before:via-secondary/20 before:to-transparent
+           dark:before:from-primary/30 dark:before:via-secondary/30
+           hover:before:translate-y-[50%] before:transition-all before:duration-700;
+  }
+  
+  /* Enhanced hover effects */
+  .scale-in-on-hover {
+    @apply transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+  
+  .slide-up-on-hover {
+    @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
+  }
+  
+  .glow-on-hover {
+    @apply hover:shadow-[0_0_20px_rgba(74,222,128,0.6)] dark:hover:shadow-[0_0_25px_rgba(74,222,128,0.7)] transition-shadow duration-300;
+  }
+  
+  .modern-glass {
+    @apply bg-white/80 dark:bg-gray-800/95 backdrop-blur-md border border-white/20 dark:border-gray-700/50 shadow-lg;
+  }
+  
+  /* New beautiful styles */
+  .gradient-button {
+    @apply relative overflow-hidden bg-white dark:bg-gray-800 text-gray-900 dark:text-white
+           border border-gray-200 dark:border-gray-700 rounded-full px-6 py-2 font-medium
+           shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5
+           before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r
+           before:from-primary/30 before:to-secondary/30 before:opacity-0 
+           hover:before:opacity-100 before:transition-opacity before:duration-300;
+  }
+  
+  .stylish-input {
+    @apply px-4 py-3 bg-white dark:bg-gray-800 border-0 border-b-2 border-gray-300
+           dark:border-gray-600 focus:border-primary dark:focus:border-primary rounded-none 
+           focus:ring-0 focus:outline-none transition-all duration-300 
+           placeholder:text-gray-400 dark:placeholder:text-gray-500;
+  }
+
+  /* New newsletter input style matching the brand theme */
+  .newsletter-input {
+    @apply px-4 py-3 bg-gray-800 border border-gray-700 text-white rounded-full
+           focus:ring-1 focus:ring-primary focus:border-primary transition-all duration-300
+           placeholder:text-gray-400 w-full;
+  }
+  
+  .elegant-card {
+    @apply bg-white dark:bg-gray-800/95 rounded-xl shadow-md hover:shadow-xl
+           transition-all duration-500 overflow-hidden border border-gray-100
+           dark:border-gray-700;
+  }
+  
+  .elegant-card-header {
+    @apply p-6 border-b border-gray-100 dark:border-gray-700;
+  }
+  
+  .elegant-card-body {
+    @apply p-6;
+  }
+  
+  .elegant-card-footer {
+    @apply p-6 bg-gray-50 dark:bg-gray-750 border-t border-gray-100 dark:border-gray-700;
+  }
+  
+  .badge-subtle {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200;
+  }
+  
+  .badge-gradient {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           text-white bg-gradient-to-r from-primary to-secondary;
+  }
+  
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent my-6;
+  }
+  
+  .icon-button {
+    @apply p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100
+           dark:hover:bg-gray-800 transition-colors;
+  }
+  
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .drop-cap:first-letter {
+    @apply float-left text-5xl font-bold mr-2 mt-1 text-primary;
+  }
+  
+  /* Updated gradient link with improved spacing */
+  .gradient-link {
+    @apply relative inline-block text-gray-800 dark:text-gray-200 transition-colors;
+  }
+  
+  .gradient-link:after {
+    @apply content-[''] absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r
+           from-primary to-secondary transition-all duration-300;
+  }
+  
+  .gradient-link:hover:after {
+    @apply w-full;
+  }
+  
+  .tag {
+    @apply inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs
+           text-gray-900 dark:bg-gray-800 dark:text-gray-300 transition-colors;
+  }
+  
+  .avatar {
+    @apply w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center
+           justify-center overflow-hidden border-2 border-white dark:border-gray-800;
+  }
+  
+  .avatar-group {
+    @apply flex -space-x-2;
+  }
+  
+  .prose-elegant {
+    @apply prose prose-gray dark:prose-invert prose-img:rounded-xl prose-headings:font-semibold
+           prose-a:text-primary dark:prose-a:text-primary prose-a:no-underline hover:prose-a:underline;
+  }
+
+  /* Newsletter component styles matching the brand theme */
+  .newsletter-card {
+    @apply overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700;
+  }
+  
+  .newsletter-header {
+    @apply bg-primary text-white p-6;
+  }
+  
+  .newsletter-body {
+    @apply bg-gray-900 text-gray-200 p-6;
+  }
+  
+  .newsletter-button {
+    @apply w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full font-medium
+           transition-all duration-300 hover:shadow-lg;
+  }
+  
+  /* Enhanced UI Components */
+  .neo-glass-card {
+    @apply backdrop-blur-2xl bg-white/70 dark:bg-gray-800/60 border border-white/30 dark:border-white/10
+           shadow-[0_10px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)]
+           rounded-xl overflow-hidden transition-all duration-500;
+  }
+  
+  .neo-glass-card:hover {
+    @apply shadow-[0_15px_35px_rgba(0,0,0,0.15)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.4)];
+  }
+  
+  /* Enhanced focus visual states */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary/60 ring-offset-2 dark:ring-offset-gray-900 transition-shadow;
+  }
+  
+  /* Asymmetrical design element */
+  .asymmetric-card {
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+  }
+  
+  /* Enhanced skeleton loading */
+  .skeleton-modern {
+    @apply bg-gray-200/80 dark:bg-gray-700/80 animate-pulse rounded overflow-hidden relative;
+  }
+  
+  .skeleton-modern::after {
+    @apply content-[''] absolute inset-0;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.2), 
+      transparent
+    );
+    animation: skeleton-shine 1.5s infinite;
+  }
+  
+  @keyframes skeleton-shine {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Enhanced badges */
+  .badge-enhanced {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary/90
+           border border-primary/20 dark:border-primary/30
+           transition-all duration-300;
+  }
+  
+  .badge-enhanced:hover {
+    @apply bg-primary/20 dark:bg-primary/30 transform scale-105;
+  }
+  
+  /* Improved tooltips */
+  .tooltip-enhanced {
+    @apply absolute invisible opacity-0 transform scale-95 transition-all duration-200 z-50
+           bg-white/90 dark:bg-gray-800/90 dark:text-white backdrop-blur-md
+           px-3 py-1.5 text-xs rounded shadow-lg dark:shadow-black/30
+           border border-gray-100 dark:border-gray-700;
+  }
+  
+  .tooltip-trigger:hover .tooltip-enhanced {
+    @apply visible opacity-100 scale-100;
+  }
+  
+  /* Scroll-based reveal animation */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Modern dropdown menu */
+  .dropdown-modern {
+    @apply absolute z-50 mt-2 origin-top-right opacity-0 invisible scale-95
+           bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg
+           rounded-xl shadow-xl dark:shadow-black/30
+           border border-gray-100 dark:border-gray-700
+           transition-all duration-200;
+  }
+  
+  .dropdown-trigger:hover .dropdown-modern,
+  .dropdown-trigger:focus-within .dropdown-modern {
+    @apply opacity-100 visible scale-100;
+  }
+  
+  /* Fine details for better accessibility */
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-gray-400 dark:text-gray-500 opacity-70;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}

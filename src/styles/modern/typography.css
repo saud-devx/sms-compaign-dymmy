@@ -1,0 +1,35 @@
+
+@layer components {
+  .headline-font {
+    @apply font-sans tracking-tight;
+    letter-spacing: -0.02em;
+  }
+  
+  .display-text {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight headline-font;
+    text-wrap: balance;
+  }
+  
+  .animate-text-reveal {
+    @apply opacity-0;
+    animation: text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transform: translateY(20px);
+  }
+  
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+}
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

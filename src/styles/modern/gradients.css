@@ -1,0 +1,40 @@
+
+@layer components {
+  .mesh-gradient {
+    @apply bg-gradient-to-br from-primary/10 via-secondary/10 to-purple-100/10 dark:from-primary/25 dark:via-secondary/25 dark:to-purple-800/25
+           relative overflow-hidden;
+  }
+  
+  .mesh-gradient::before {
+    @apply content-[''] absolute inset-0 bg-[length:200%_200%] opacity-70
+           bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/15 dark:to-secondary/15
+           animate-gradient-x;
+  }
+  
+  .glass-morphism {
+    @apply bg-white/20 dark:bg-gray-800/90 backdrop-blur-xl border border-white/20 dark:border-white/15 
+           shadow-[0_8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.25)] hover:shadow-xl transition-all duration-500
+           relative overflow-hidden;
+  }
+  
+  .glass-morphism::after {
+    @apply content-[''] absolute inset-0 bg-gradient-to-br from-white/5 to-transparent dark:from-white/10 dark:to-transparent
+           opacity-30 dark:opacity-30;
+  }
+  
+  .animated-gradient {
+    background-size: 300% 300%;
+    @apply bg-gradient-to-r from-primary via-secondary to-primary;
+    animation: animated-gradient-shift 8s ease infinite;
+  }
+  
+  @keyframes animated-gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}

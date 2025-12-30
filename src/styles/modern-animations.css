@@ -1,0 +1,289 @@
+
+/* Modern advanced animations for enhanced UI */
+
+/* Floating animation with custom variables */
+.float-custom {
+  animation: float-custom var(--float-duration, 6s) ease-in-out infinite;
+}
+
+@keyframes float-custom {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(var(--float-distance, -15px));
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Glow pulse animation */
+.pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(74, 222, 128, 0);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(74, 222, 128, 0);
+  }
+}
+
+/* Text reveal animation */
+.reveal-text {
+  overflow: hidden;
+  position: relative;
+}
+
+.reveal-text span {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: reveal-text-animation 0.8s forwards;
+}
+
+@keyframes reveal-text-animation {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Sequential reveal delay helper classes */
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+.delay-4 {
+  animation-delay: 0.4s;
+}
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Draw SVG path animation */
+.draw-svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-path 2s forwards;
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 3D hover effect with transform perspective */
+.card-3d-effect {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d-effect:hover {
+  transform: rotateX(5deg) rotateY(5deg) scale(1.02);
+}
+
+/* Shine effect on hover */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+  transform: rotate(30deg);
+  transition: all 0.7s;
+}
+
+.shine-effect:hover::after {
+  animation: shine 1.2s forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 130%;
+  }
+}
+
+/* Gradient button pulse */
+.gradient-button-pulse {
+  background-size: 200% 200%;
+  animation: gradient-position 4s ease infinite;
+}
+
+@keyframes gradient-position {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Text typing animation */
+.typing {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40) forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Particle float with randomized motion */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: particle-float 8s infinite;
+  animation-delay: calc(var(--particle-delay) * 1s);
+  background-color: var(--particle-color, rgba(255, 255, 255, 0.5));
+  width: var(--particle-size, 5px);
+  height: var(--particle-size, 5px);
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(var(--particle-distance-x, 10px), 
+                         calc(var(--particle-distance-y, 10px) * -1))
+               rotate(90deg);
+  }
+  50% {
+    transform: translate(calc(var(--particle-distance-x, 10px) * 0.5), 
+                         var(--particle-distance-y, 10px))
+               rotate(180deg);
+  }
+  75% {
+    transform: translate(calc(var(--particle-distance-x, 10px) * -1), 
+                         calc(var(--particle-distance-y, 10px) * 0.5))
+               rotate(270deg);
+  }
+}
+
+/* Spotlight hover effect */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+              rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Advanced gradient text animation */
+.gradient-text-animated {
+  background: linear-gradient(90deg, #4CAF50, #03A9F4, #4CAF50);
+  background-size: 300% 100%;
+  animation: animated-gradient-text 6s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes animated-gradient-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Morphing blob animation */
+.morphing-blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite both alternate;
+}
+
+@keyframes morph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 70% / 40% 60% 70% 30%; }
+  75% { border-radius: 60% 30% 70% 40% / 60% 40% 60% 50%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+/* Notification popup animation */
+@keyframes notification-slide-in {
+  0% { 
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.notification-popup {
+  animation: notification-slide-in 0.3s forwards;
+}
+
+/* Notification pulse effect */
+.notification-pulse {
+  position: relative;
+}
+
+.notification-pulse::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(74, 222, 128, 0.2);
+  border-radius: inherit;
+  animation: notification-pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes notification-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}

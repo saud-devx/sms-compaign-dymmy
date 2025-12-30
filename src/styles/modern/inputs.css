@@ -1,0 +1,37 @@
+
+@layer components {
+  .modern-input {
+    @apply px-4 py-3 
+           bg-white/80 dark:bg-gray-800/90
+           backdrop-blur-sm border border-gray-200 
+           dark:border-gray-600 rounded-lg 
+           focus:ring-2 focus:ring-primary/40 
+           focus:border-primary focus:outline-none 
+           focus:shadow-md focus:shadow-primary/20
+           transition-all duration-300 shadow-sm 
+           text-gray-700 dark:text-gray-50 
+           hover:border-primary/50
+           dark:focus:ring-primary/60
+           dark:focus:shadow-primary/30
+           dark:placeholder-gray-400;
+  }
+  
+  /* New enhanced input styles */
+  .search-input {
+    @apply modern-input pl-10;
+  }
+  
+  .error-input {
+    @apply modern-input border-red-300 dark:border-red-500/70
+           focus:ring-red-200 dark:focus:ring-red-500/30
+           focus:border-red-400 dark:focus:border-red-500
+           focus:shadow-red-100 dark:focus:shadow-red-500/20;
+  }
+  
+  .success-input {
+    @apply modern-input border-green-300 dark:border-green-500/70
+           focus:ring-green-200 dark:focus:ring-green-500/30
+           focus:border-green-400 dark:focus:border-green-500
+           focus:shadow-green-100 dark:focus:shadow-green-500/20;
+  }
+}

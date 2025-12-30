@@ -1,0 +1,166 @@
+
+@layer components {
+  /* 3D Card Effects */
+  .card-3d-effect {
+    @apply transition-all duration-500 hover:shadow-2xl relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .card-3d-effect:hover .card-3d-content {
+    transform: translateZ(30px) rotateX(2deg) rotateY(3deg);
+  }
+  
+  .card-3d-content {
+    @apply transition-transform duration-300;
+    transform: translateZ(0);
+  }
+  
+  /* Advanced Gradients */
+  .gradient-spotlight {
+    @apply relative overflow-hidden;
+  }
+  
+  .gradient-spotlight::after {
+    @apply content-[''] absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 60%);
+    mix-blend-mode: overlay;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .light .gradient-spotlight:hover::after {
+    @apply opacity-100;
+  }
+  
+  .dark .gradient-spotlight::after {
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+                rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%);
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(76, 175, 80, 0.5) transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/70;
+  }
+  
+  /* Grain Texture */
+  .texture-grain {
+    position: relative;
+  }
+  
+  .texture-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.1'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.05;
+    z-index: 10;
+    mix-blend-mode: overlay;
+  }
+  
+  .dark .texture-grain::before {
+    opacity: 0.07;
+  }
+  
+  /* Glowing effects for dark mode */
+  .dark .glow-effect {
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+  }
+  
+  .dark .glow-text {
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Asymmetrical elements */
+  .asymmetric-container {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+  }
+  
+  /* Duotone image effects */
+  .duotone-image {
+    position: relative;
+  }
+  
+  .duotone-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(76, 175, 80, 0.5), rgba(3, 169, 244, 0.5));
+    mix-blend-mode: hard-light;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Focus styles */
+  .focus-ring {
+    @apply outline-none ring-offset-2 transition-shadow duration-200;
+  }
+  
+  .focus-ring:focus-visible {
+    @apply ring-2 ring-primary/70 ring-offset-white dark:ring-offset-gray-900;
+  }
+  
+  /* Scroll progress */
+  .scroll-progress {
+    height: 3px;
+    background: linear-gradient(to right, rgb(76, 175, 80), rgb(3, 169, 244));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--scroll, 0%);
+    z-index: 100;
+    transition: width 0.1s;
+  }
+  
+  /* Performance optimizations */
+  .optimize-gpu {
+    /* Force GPU acceleration for smoother animations */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, opacity;
+  }
+  
+  .optimize-animations {
+    /* For heavy animation elements */
+    contain: content;
+    will-change: transform, opacity;
+  }
+  
+  .lazy-render {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+  
+  .reduced-motion {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  @media (prefers-reduced-motion) {
+    .auto-reduced-motion {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+
+/* Custom carousel fade transition */
+.opacity-transition {
+  transition: none;
+}
+
+/* Override any horizontal sliding movement */
+.embla__slide {
+  transition: none;
+}
+
+/* Adjust spacing to avoid overlap */
+.embla__container {
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Basic movement for carousel items */
+.embla__slide {
+  opacity: 1;
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout style paint;
+}
+
+.embla__slide.is-selected {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Allow horizontal movement instead of fading */
+.embla__container {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Hero carousel basic slide effect - SIMPLE HORIZONTAL TRANSITION */
+.hero-carousel .embla__slide {
+  position: relative;
+  opacity: 1;
+  transition: none;
+  z-index: 1;
+  contain: layout style;
+}
+
+.hero-carousel .embla__slide.is-selected {
+  z-index: 2;
+}
+
+/* Better performance for mobile devices */
+@media (max-width: 768px) {
+  .embla__slide {
+    will-change: transform;
+    contain: content;
+  }
+  
+  /* Force hardware acceleration for better mobile performance */
+  .hero-carousel {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}

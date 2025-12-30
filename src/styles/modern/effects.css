@@ -1,0 +1,30 @@
+
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-border {
+    @apply relative bg-white dark:bg-gray-800 rounded-xl p-px before:absolute before:inset-0 before:-z-10 
+           before:rounded-xl before:bg-gradient-to-r before:from-primary before:to-secondary before:opacity-70 dark:before:opacity-100;
+  }
+  
+  .frosted-glass {
+    @apply bg-white/60 dark:bg-gray-800/95 backdrop-blur-xl border border-white/30 dark:border-gray-500/50
+           rounded-2xl shadow-xl relative overflow-hidden;
+  }
+  
+  .frosted-glass::before {
+    @apply content-[''] absolute inset-0 bg-gradient-to-br from-white/5 to-white/10 dark:from-gray-600/10 dark:to-gray-600/20
+           opacity-40 z-[-1];
+  }
+  
+  .spotlight {
+    @apply relative overflow-hidden group;
+  }
+  
+  .spotlight::before {
+    @apply content-[''] absolute -top-40 -left-40 w-80 h-80 bg-primary/10 dark:bg-primary/30 rounded-full
+           blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700;
+  }
+}

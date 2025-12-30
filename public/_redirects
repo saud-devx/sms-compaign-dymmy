@@ -1,0 +1,9 @@
+
+# Redirect all routes to index.html for SPA routing with 200 status
+/*    /index.html   200
+
+# Additional rule to ensure API paths work correctly if needed
+# /api/*  /api/:splat  200
+
+# Make sure all assets are properly found
+/assets/*  /assets/:splat  200

@@ -1,0 +1,193 @@
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2.5 text-base font-medium text-gray-700 dark:text-gray-200 transition-all duration-300 relative 
+           after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary 
+           hover:after:w-full after:transition-all after:duration-300 hover:text-primary;
+  }
+  
+  /* Enhanced button with modern subtle gradient and improved shadows */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-medium 
+           hover:brightness-110 transition-all duration-300 shadow-lg hover:shadow-xl 
+           hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 
+           focus-visible:ring-primary/50 focus-visible:ring-offset-2 dark:ring-offset-gray-900
+           focus-visible:outline-none relative overflow-hidden;
+  }
+  
+  /* Enhanced version of btn-primary with shine effect */
+  .btn-primary::after {
+    @apply content-[''] absolute inset-0 bg-white/20 opacity-0 transition-all duration-300;
+  }
+  
+  .btn-primary:hover::after {
+    @apply opacity-100 animate-shimmer;
+  }
+
+  /* Improved card with subtle gradient and depth for light mode */
+  .card {
+    @apply bg-gradient-to-b from-white to-gray-50/70 dark:from-gray-800/95 dark:to-gray-800/95 backdrop-blur-sm rounded-xl 
+           shadow-[0_2px_12px_rgba(0,0,0,0.04),0_1px_4px_rgba(0,0,0,0.02)] dark:shadow-lg p-6 md:p-8 
+           hover:shadow-[0_4px_16px_rgba(0,0,0,0.06),0_2px_6px_rgba(0,0,0,0.03)] dark:hover:shadow-xl 
+           transition-all duration-300 border border-gray-100/50 dark:border-gray-700/50 hover:-translate-y-1;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight relative inline-block text-gray-900 dark:text-white;
+  }
+
+  .section-title::after {
+    @apply content-[''] absolute -bottom-3 left-0 w-2/3 h-1 bg-gradient-to-r from-primary to-secondary rounded-full;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  /* Enhanced 3D button effect */
+  .btn-3d {
+    @apply relative bg-gradient-to-b from-primary to-primary/90 text-white px-6 py-3 rounded-full font-medium 
+           shadow-[0_4px_0_0_rgba(0,0,0,0.2)] hover:shadow-[0_2px_0_0_rgba(0,0,0,0.2)] 
+           hover:translate-y-0.5 active:translate-y-1 active:shadow-none transition-all duration-150;
+  }
+  
+  /* Enhanced glass card with improved backdrop blur */
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-800/95 backdrop-blur-md border border-white/40 dark:border-gray-700/50
+           rounded-xl p-6 shadow-[0_8px_20px_rgba(0,0,0,0.03),0_3px_8px_rgba(0,0,0,0.02)]
+           dark:shadow-lg hover:shadow-xl transition-all;
+  }
+  
+  /* Badge with subtle hover effect */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary dark:bg-primary/20
+           transition-all duration-300 hover:bg-primary/20 dark:hover:bg-primary/30;
+  }
+  
+  /* Enhanced callout box */
+  .callout {
+    @apply relative p-4 pl-12 border-l-4 border-primary bg-primary/5 dark:bg-primary/10 rounded-r-lg shadow-sm;
+  }
+  
+  .callout:before {
+    @apply content-['!'] absolute left-4 top-4 w-6 h-6 rounded-full bg-primary/20 dark:bg-primary/30 text-primary
+           flex items-center justify-center font-bold text-sm;
+  }
+  
+  /* New modern outline button with improved hover state */
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-medium px-6 py-2.5 rounded-full 
+           hover:bg-primary/15 transition-all duration-300 flex items-center justify-center gap-2;
+  }
+  
+  /* New hero button style with gradient and improved hover state */
+  .hero-button {
+    @apply relative px-6 py-3 rounded-full font-medium transition-all duration-300
+           before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary before:to-secondary 
+           before:rounded-full before:z-0 hover:before:scale-105 hover:before:brightness-110 hover:before:saturate-125
+           hover:before:opacity-90 overflow-hidden text-white flex items-center justify-center;
+  }
+  
+  .hero-button > span {
+    @apply relative z-10;
+  }
+  
+  /* Avatar component */
+  .avatar-modern {
+    @apply relative rounded-full overflow-hidden border-2 border-white dark:border-gray-800 shadow-md;
+  }
+  
+  /* Avatar group */
+  .avatar-group {
+    @apply flex -space-x-3;
+  }
+  
+  /* Card with floating effect */
+  .floating-card {
+    @apply card relative transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 dark:hover:shadow-primary/10
+           hover:-translate-y-2;
+  }
+  
+  /* Card with background blur */
+  .blurry-card {
+    @apply bg-white/50 dark:bg-gray-800/95 backdrop-blur-lg border border-white/10 dark:border-gray-700/30
+           rounded-xl shadow-lg p-6;
+  }
+  
+  /* Modern stat card */
+  .stat-card {
+    @apply rounded-xl p-6 relative overflow-hidden backdrop-blur-md
+           bg-gradient-to-br from-white/60 to-white/80 dark:from-gray-800/95 dark:to-gray-800/95
+           border border-gray-200/50 dark:border-gray-700/60 shadow-lg;
+  }
+  
+  /* Subtle divider */
+  .divider-subtle {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent my-6;
+  }
+  
+  /* Feature card with icon */
+  .feature-card-modern {
+    @apply p-6 rounded-xl transition-all duration-300 hover:shadow-lg bg-white/80 dark:bg-gray-800/95
+           border border-gray-100 dark:border-gray-700 relative backdrop-blur-sm
+           hover:-translate-y-1 hover:bg-white dark:hover:bg-gray-800;
+  }
+  
+  /* Icon wrapper */
+  .icon-wrapper {
+    @apply w-12 h-12 rounded-full flex items-center justify-center bg-primary/10 dark:bg-primary/20 
+           text-primary mb-4;
+  }
+  
+  /* Gradient border card with improved hover state */
+  .gradient-border-card {
+    @apply p-[1px] rounded-xl bg-gradient-to-br from-primary via-secondary to-primary
+           hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:brightness-110;
+  }
+  
+  .gradient-border-card > div {
+    @apply bg-white dark:bg-gray-800 p-6 rounded-[10px];
+  }
+  
+  /* Modern tag */
+  .tag-modern {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium
+           bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200
+           hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors cursor-default;
+  }
+  
+  /* Modern timeline item */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l border-gray-200 dark:border-gray-700 last:border-0 last:pb-0;
+  }
+  
+  .timeline-item::before {
+    @apply content-[''] absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-primary;
+  }
+  
+  /* Testimonial card */
+  .testimonial-card {
+    @apply p-6 rounded-xl bg-white/90 dark:bg-gray-800/95 backdrop-blur-md shadow-lg
+           border border-gray-100 dark:border-gray-700;
+  }
+  
+  /* Quote style */
+  .quote {
+    @apply relative pl-6 italic text-gray-600 dark:text-gray-300;
+  }
+  
+  .quote::before {
+    @apply content-['"'] absolute left-0 top-0 text-3xl text-primary;
+  }
+  
+  /* Action card */
+  .action-card {
+    @apply flex flex-col p-6 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 
+           dark:from-primary/20 dark:to-secondary/20 border border-white/30 dark:border-gray-700/50
+           hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+}

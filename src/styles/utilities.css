@@ -1,0 +1,64 @@
+
+@layer components {  
+  /* Enhanced animated background for dark mode */
+  .animated-bg {
+    @apply bg-gradient-to-br from-primary/5 to-secondary/5 dark:from-primary/15 dark:to-secondary/15 bg-size-200 animate-gradient-x;
+  }
+  
+  /* Improved glass card effect for dark mode */
+  .glass-card {
+    @apply backdrop-blur-md bg-white/95 dark:bg-gray-800/95 
+           border border-white/30 dark:border-gray-700/40 
+           shadow-[0_10px_30px_rgba(0,0,0,0.04),0_6px_10px_rgba(0,0,0,0.02)]
+           dark:shadow-xl dark:shadow-black/30;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .floating {
+    @apply animate-float;
+  }
+
+  /* Enhanced form inputs for dark mode with better contrast */
+  .form-input {
+    @apply w-full rounded-lg border border-gray-200 dark:border-gray-600 p-4 
+           text-gray-700 dark:text-gray-50 
+           shadow-[0_2px_5px_rgba(0,0,0,0.03),0_1px_2px_rgba(0,0,0,0.01)]
+           dark:shadow-sm focus:border-primary focus:outline-none focus:ring-2
+           focus:ring-primary/20 transition-all bg-white/90 dark:bg-gray-800/90
+           backdrop-blur-sm;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-50 mb-2;
+  }
+
+  /* Enhanced feature cards for dark mode */
+  .feature-card {
+    @apply card hover:bg-gradient-to-br hover:from-primary/5 hover:to-secondary/5 
+           dark:hover:from-primary/15 dark:hover:to-secondary/15;
+  }
+
+  /* Enhanced service cards for better contrast */
+  .service-card {
+    @apply card hover:border-primary/30;
+  }
+  
+  /* Enhanced light card with better dark mode contrast */
+  .light-card {
+    @apply bg-gradient-to-b from-white to-gray-50/90 border border-gray-100/50
+           shadow-[0_5px_15px_rgba(0,0,0,0.03),0_2px_5px_rgba(0,0,0,0.02)]
+           hover:shadow-[0_8px_25px_rgba(0,0,0,0.05),0_5px_10px_rgba(0,0,0,0.03)]
+           transition-all duration-300 dark:from-gray-800 dark:to-gray-900 dark:border-gray-700/50;
+  }
+  
+  /* Soft button style with better dark mode contrast */
+  .soft-button {
+    @apply bg-white border border-gray-100 shadow-sm 
+           hover:shadow-md transition-all duration-300
+           text-gray-700 hover:text-primary
+           dark:bg-gray-800 dark:border-gray-700 dark:text-gray-50 dark:hover:text-primary;
+  }
+}

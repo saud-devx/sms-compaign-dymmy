@@ -1,0 +1,51 @@
+
+@layer components {
+  .pulse-glow {
+    @apply relative;
+  }
+  
+  .pulse-glow::after {
+    @apply content-[''] absolute inset-0 rounded-xl bg-primary/20 dark:bg-primary/40 blur-xl opacity-0 transition-opacity;
+    animation: pulse-glow-animation 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow-animation {
+    0% { opacity: 0; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0; }
+  }
+  
+  .aurora-bg {
+    @apply relative overflow-hidden;
+  }
+  
+  .aurora-bg::before {
+    @apply content-[''] absolute h-40 w-3/4 bg-gradient-to-r from-primary/40 via-secondary/40 to-purple-400/40 
+           blur-[100px] opacity-50 dark:opacity-60;
+    top: 10%;
+    left: 0;
+    animation: aurora-slide 15s ease-in-out infinite alternate;
+  }
+  
+  .aurora-bg::after {
+    @apply content-[''] absolute h-40 w-3/4 bg-gradient-to-r from-secondary/40 via-purple-400/40 to-primary/40 
+           blur-[100px] opacity-50 dark:opacity-60;
+    bottom: 10%;
+    right: 0;
+    animation: aurora-slide-reverse 20s ease-in-out infinite alternate;
+  }
+  
+  @keyframes aurora-slide {
+    0% { transform: translateX(-30%) translateY(-10%); }
+    100% { transform: translateX(30%) translateY(10%); }
+  }
+  
+  @keyframes aurora-slide-reverse {
+    0% { transform: translateX(30%) translateY(10%); }
+    100% { transform: translateX(-30%) translateY(-10%); }
+  }
+  
+  .dark .shimmer {
+    @apply bg-gradient-to-r from-transparent via-gray-400/40 to-transparent bg-[length:200%_100%] animate-shimmer;
+  }
+}

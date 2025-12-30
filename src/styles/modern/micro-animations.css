@@ -1,0 +1,164 @@
+
+/* First add the required @tailwind components directive */
+@tailwind components;
+
+@layer components {
+  /* Button click ripple effect */
+  .ripple-effect {
+    @apply relative overflow-hidden;
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Shining effect for buttons and cards */
+  .shine-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0s;
+  }
+
+  .shine-effect:hover::after {
+    transform: translateX(100%);
+    transition: transform 0.8s ease-in-out;
+  }
+
+  /* Soft hover effect */
+  .hover-lift {
+    @apply transition-all duration-300;
+    transform: translateY(0);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 3D Card tilt effect */
+  .tilt-card {
+    @apply transition-transform duration-300;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .tilt-card-inner {
+    @apply transition-transform duration-300;
+    transform: rotateY(0) rotateX(0);
+  }
+
+  .tilt-card:hover .tilt-card-inner {
+    transform: rotateY(2deg) rotateX(-2deg);
+  }
+
+  /* Spotlight hover effect */
+  .spotlight-effect {
+    @apply relative overflow-hidden;
+  }
+  
+  .spotlight-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at var(--x, 50%) var(--y, 50%),
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .spotlight-effect:hover::before {
+    opacity: 1;
+  }
+
+  /* Staggered reveal animation for lists */
+  .stagger-item {
+    @apply opacity-0 translate-y-4;
+  }
+
+  .stagger-item.reveal {
+    @apply opacity-100 translate-y-0 transition-all duration-500;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.15, 1.35);
+  }
+
+  /* Gradient border animation */
+  .gradient-border-animated {
+    @apply relative p-[1px] rounded-lg;
+    background: linear-gradient(90deg, #4CAF50, #03A9F4, #4CAF50);
+    background-size: 300% 100%;
+    animation: gradientMove 6s linear infinite;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  .gradient-border-animated-content {
+    @apply bg-white dark:bg-gray-800 rounded-[calc(0.5rem-1px)] h-full w-full;
+  }
+
+  /* Magnetic button effect */
+  .magnetic-button {
+    @apply transition-transform duration-100;
+  }
+}
+
+/* JavaScript for magnetic button effect:
+document.querySelectorAll('.magnetic-button').forEach(button => {
+  button.addEventListener('mousemove', (e) => {
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+  });
+  
+  button.addEventListener('mouseleave', () => {
+    button.style.transform = 'translate(0, 0)';
+  });
+});
+*/
+
+/* JavaScript for spotlight effect:
+document.querySelectorAll('.spotlight-effect').forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / el.offsetWidth) * 100;
+    const y = ((e.clientY - rect.top) / el.offsetHeight) * 100;
+    el.style.setProperty('--x', `${x}%`);
+    el.style.setProperty('--y', `${y}%`);
+  });
+});
+*/

@@ -1,0 +1,251 @@
+
+/* Hover effects */
+.hover-glow {
+  transition: all 0.4s;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Dark mode shimmer */
+.dark .shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+}
+
+/* Dark mode enhancements */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(74, 222, 128, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(74, 222, 128, 0.3);
+  }
+}
+
+.dark .animate-glow {
+  animation: glow 3s infinite;
+}
+
+/* Parallax scrolling effect */
+.parallax {
+  transform: translateY(0);
+  transition: transform 0.1s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform;
+}
+
+/* Fancy background pattern */
+.pattern-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .pattern-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* New beautiful effects */
+.liquid-fill {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-fill::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(76, 175, 80, 0.2), rgba(3, 169, 244, 0.2));
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+
+.liquid-fill:hover::before {
+  top: 0;
+}
+
+.spotlight-hover {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.spotlight-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.spotlight-hover:hover::before {
+  opacity: 1;
+}
+
+/* Glass card effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient border */
+.gradient-border-animation {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.gradient-border-animation::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #4CAF50, #03A9F4, #4CAF50);
+  background-size: 300% 100%;
+  animation: border-animation 4s linear infinite;
+  border-radius: 0.75rem;
+  z-index: -1;
+}
+
+.gradient-border-animation::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: white;
+  border-radius: 0.65rem;
+  z-index: -1;
+}
+
+.dark .gradient-border-animation::after {
+  background: #1f1f1f;
+}
+
+@keyframes border-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d-content {
+  transform: translateZ(0);
+  transition: transform 0.3s;
+}
+
+.card-3d:hover .card-3d-content {
+  transform: translateZ(20px);
+}
+
+/* Reveal text effect */
+.reveal-text {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-text span {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal-text.reveal span,
+.reveal-text:hover span {
+  transform: translateY(0);
+}
+
+/* Water ripple effect */
+.water-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-ripple::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.water-ripple:active::before {
+  animation: water-ripple 1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes water-ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+/* Beautiful text gradient animation */
+.animate-text-gradient {
+  background: linear-gradient(90deg, #4CAF50, #03A9F4, #4CAF50);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-text 6s linear infinite;
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

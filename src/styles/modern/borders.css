@@ -1,0 +1,32 @@
+
+@layer components {
+  .glowing-border {
+    @apply border border-transparent bg-gradient-to-r from-primary/90 to-secondary/90 p-[1px] rounded-xl relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500;
+  }
+
+  .glowing-border::before {
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-50 blur-xl;
+    animation: border-pulse 3s ease-in-out infinite alternate;
+  }
+
+  .glowing-border-content {
+    @apply bg-white dark:bg-gray-800 rounded-[11px] p-6 relative z-10;
+  }
+  
+  @keyframes border-pulse {
+    0% { opacity: 0.3; transform: scale(0.98); }
+    100% { opacity: 0.6; transform: scale(1.01); }
+  }
+  
+  .fancy-border {
+    @apply border border-gray-200 dark:border-gray-500 rounded-xl p-[1px] relative overflow-hidden;
+  }
+
+  .fancy-border::before {
+    @apply content-[''] absolute inset-0 bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-500 to-transparent opacity-100 hover:via-primary/60 dark:hover:via-primary/80 transition-colors duration-500;
+  }
+
+  .fancy-border-content {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-6 relative z-10;
+  }
+}

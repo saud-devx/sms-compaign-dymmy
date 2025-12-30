@@ -1,0 +1,151 @@
+
+/* Main CSS file that imports all other CSS files */
+@import './base.css';
+@import './components.css';
+@import './utilities.css';
+@import './modern/index.css';
+@import './animations.css';
+@import './effects.css';
+@import './ui-components.css';
+@import './modern-animations.css';
+
+/* Import new enhanced files */
+@import './modern/enhanced-typography.css';
+@import './modern/micro-animations.css';
+
+/* Additional global accessibility styles */
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary dark:from-primary dark:to-secondary dark:brightness-125;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg hover:translate-y-[-1px] transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply bg-white dark:bg-gray-800 border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-all duration-300 dark:border-primary/80 dark:text-primary/90 dark:hover:text-white;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+/* Better contrast for glass morphism */
+.glass-morphism {
+  @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl border border-gray-100/50 dark:border-gray-700/50 shadow-xl;
+}
+
+/* Improved contrast for hover effects */
+.hover-scale {
+  @apply transition-transform duration-300 ease-out hover:scale-105;
+}
+
+/* Ensure sufficient contrast for all interactive elements */
+a, button, [role="button"] {
+  @apply outline-offset-4 focus-visible:outline-2 focus-visible:outline-primary/70;
+}
+
+/* Added custom scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors;
+}
+
+/* Subtle texture for better visual depth */
+.texture-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+  background-position: 0 0;
+  background-size: 200px 200px;
+}
+
+/* Enhanced readability for blog post content in dark mode */
+.prose.dark\:prose-invert h1,
+.prose.dark\:prose-invert h2,
+.prose.dark\:prose-invert h3,
+.prose.dark\:prose-invert h4,
+.prose.dark\:prose-invert h5,
+.prose.dark\:prose-invert h6 {
+  @apply dark:text-gray-100;
+}
+
+.prose.dark\:prose-invert p,
+.prose.dark\:prose-invert ul,
+.prose.dark\:prose-invert ol,
+.prose.dark\:prose-invert blockquote {
+  @apply dark:text-gray-300;
+}
+
+.prose.dark\:prose-invert strong {
+  @apply dark:text-gray-100;
+}
+
+.prose.dark\:prose-invert a {
+  @apply dark:text-primary-foreground dark:hover:text-primary-foreground/90;
+}
+
+.prose.dark\:prose-invert code,
+.prose.dark\:prose-invert pre {
+  @apply dark:bg-gray-900 dark:text-gray-100;
+}
+
+/* Special styling for lead paragraphs in blog posts */
+.prose .lead {
+  @apply text-lg font-medium text-gray-700 dark:text-gray-200;
+}
+
+/* Add style for sticky header to prevent content showing through */
+.sticky-header {
+  @apply bg-white dark:bg-gray-900 backdrop-filter backdrop-blur-lg;
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Remove navigation link underline styles completely */
+.nav-link {
+  @apply relative font-medium px-2 py-1 text-gray-700 dark:text-gray-200 no-underline;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  text-decoration: none !important;
+}
+
+/* Smooth scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add animation for gradient backgrounds */
+.animate-gradient-x {
+  background-size: 200% 100%;
+  animation: gradient-x 8s linear infinite;
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Section styling with improved scroll margins */
+section {
+  @apply overflow-x-hidden scroll-mt-32;
+}
+
+/* Fix for initial section visibility */
+section[id] {
+  @apply relative;
+}

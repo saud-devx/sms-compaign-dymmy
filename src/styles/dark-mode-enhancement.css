@@ -1,0 +1,62 @@
+
+/* Enhanced dark mode styles for better readability */
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose h5,
+.dark .prose h6 {
+  color: #fff;
+}
+
+.dark .prose p,
+.dark .prose ul,
+.dark .prose ol,
+.dark .prose li {
+  color: #e2e8f0; /* Lighter gray for better contrast */
+}
+
+.dark .prose strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.dark .prose a {
+  color: #60a5fa; /* Brighter blue links in dark mode */
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dark .prose a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.dark .prose blockquote {
+  border-left-color: #4b5563;
+  color: #d1d5db;
+}
+
+.dark .prose code {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+
+.dark .prose pre {
+  background-color: #1f2937;
+}
+
+/* Case studies specific styling */
+.dark .case-study-content h2 {
+  color: #f3f4f6;
+  border-bottom: 1px solid #4b5563;
+}
+
+.dark .case-study-content ul li::before {
+  background-color: #60a5fa;
+}
+
+.dark .case-study-stats {
+  background-color: #1f2937;
+  border-color: #374151;
+}

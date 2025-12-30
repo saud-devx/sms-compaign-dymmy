@@ -1,0 +1,28 @@
+
+@layer components {
+  .modern-button {
+    @apply px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium
+           rounded-full shadow-md hover:shadow-lg transition-all duration-300
+           hover:-translate-y-1 active:translate-y-0 focus:ring-2 focus:ring-primary/50
+           focus:outline-none relative overflow-hidden group;
+  }
+  
+  .modern-button::after {
+    @apply content-[''] absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+  }
+  
+  .neo-button {
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden
+           font-medium rounded-full bg-gradient-to-r from-primary to-secondary text-white
+           shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1
+           after:content-[''] after:absolute after:inset-0 after:bg-white after:opacity-0
+           hover:after:opacity-20 after:transition-opacity;
+  }
+  
+  .btn-elegant {
+    @apply px-6 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-full
+           border border-gray-200 dark:border-gray-600 shadow-sm hover:shadow-md
+           transition-all duration-300 hover:border-primary/50 dark:hover:border-primary/50
+           hover:-translate-y-0.5 font-medium;
+  }
+}

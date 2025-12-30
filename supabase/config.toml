@@ -1,0 +1,11 @@
+
+project_id = "krpodticwssaorcvzhsp"
+
+[auth]
+site_url = "https://www.campagnesms.com"
+additional_redirect_urls = [
+  "https://extraordinary-yeot-2f541e.netlify.app/admin/login",
+  "https://extraordinary-yeot-2f541e.netlify.app/admin",
+  "https://www.campagnesms.com/admin/login",
+  "https://www.campagnesms.com/admin"
+]

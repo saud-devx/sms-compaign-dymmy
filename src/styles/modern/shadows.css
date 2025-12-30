@@ -1,0 +1,29 @@
+
+@layer components {
+  .soft-shadow {
+    @apply shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] 
+           dark:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.6)] 
+           hover:shadow-[0_15px_45px_-15px_rgba(0,0,0,0.15)] 
+           dark:hover:shadow-[0_15px_45px_-15px_rgba(0,0,0,0.7)] 
+           transition-all duration-500;
+  }
+  
+  .hover-float {
+    @apply transition-all duration-500 hover:-translate-y-2 
+           hover:shadow-xl dark:hover:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.7)];
+  }
+  
+  /* New enhanced shadows for dark mode */
+  .card-shadow {
+    @apply shadow-md dark:shadow-[0_4px_20px_rgba(0,0,0,0.2)];
+  }
+  
+  .elevated-shadow {
+    @apply shadow-lg dark:shadow-[0_8px_30px_rgba(0,0,0,0.25)];
+  }
+  
+  .inset-shadow {
+    @apply shadow-[inset_0_1px_3px_rgba(0,0,0,0.1)] 
+           dark:shadow-[inset_0_1px_3px_rgba(0,0,0,0.3)];
+  }
+}
